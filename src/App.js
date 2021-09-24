@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { React} from "react";
+import Cardlist from './Component/Cardlist';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <header className="navv">
+          <div
+            className="title"
+            style={{
+              position: "relative",
+              left: "45%",
+              fontSize: "20px",
+              fontWeight: "bold",
+            }}
+          >
+            <p onClick={() => alert("Selamat Datang")}>Klik Disini!</p>
+          </div>
+        </header>
+        <Switch>
+          <Route path="/" exact component={Cardlist} />
+        </Switch>
+      </BrowserRouter>
   );
 }
-
-export default App;
